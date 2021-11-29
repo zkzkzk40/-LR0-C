@@ -76,6 +76,40 @@ void FSM::show()
 	}
 }
 
+void FSM::outPutToFile(string path)
+{
+	ofstream outFile;
+	outFile.open(path);
+	//Êä³öACTIONºÍGOTO±í
+	int standardLen = 4;
+	outFile << setw(standardLen) << "×´|" << setw(terminators.size() * standardLen) << "ACTION" << "|" << setw(nonTerminators.size() * standardLen) << "GOTO" << endl;
+	outFile << setw(standardLen) << "Ì¬|";
+	for (int i = 0; i < terminators.size(); i++) {
+		outFile << setw(standardLen) << terminators.substr(i, 1);
+	}
+	outFile << "|";
+	for (int i = 0; i < nonTerminators.size(); i++) {
+		outFile << setw(standardLen) << nonTerminators.substr(i, 1);
+	}
+	outFile << endl;
+	for (int i = 0; i < vectorI.size(); i++) {
+		outFile << setw(standardLen) << to_string(i) + "|";
+		for (int j = 0; j < terminators.size(); j++) {
+			string terminator = terminators.substr(j, 1);
+			string str = mapACTION[i][terminator];
+			outFile << setw(standardLen) << str;
+		}
+		outFile << "|";
+		for (int j = 0; j < nonTerminators.size(); j++) {
+			string nonTerminator = nonTerminators.substr(j, 1);
+			string str = mapGOTO[i][nonTerminator];
+			outFile << setw(standardLen) << str;
+		}
+		outFile << endl;
+	}
+	outFile.close();
+}
+
 void FSM::buildFSM()
 {
 	I I0;

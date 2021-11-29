@@ -1,0 +1,15 @@
+ ״|              ACTION|            GOTO
+ ̬|   a   b   c   d   #|   S   E   A   B
+  0|  s3  s4            |   1   2        
+  1|                 acc|                
+  2|  r1  r1  r1  r1  r1|                
+  3|          s6  s7    |           5    
+  4|          s9 s10    |               8
+  5|  r2  r2  r2  r2  r2|                
+  6|          s6  s7    |          11    
+  7|  r5  r5  r5  r5  r5|                
+  8|  r3  r3  r3  r3  r3|                
+  9|          s9 s10    |              12
+ 10|  r7  r7  r7  r7  r7|                
+ 11|  r4  r4  r4  r4  r4|                
+ 12|  r6  r6  r6  r6  r6|                

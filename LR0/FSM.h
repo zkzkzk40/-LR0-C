@@ -2,7 +2,8 @@
 #include "GO.h"
 #include "I.h"
 #include <map>
-#include<iomanip>
+#include <iomanip>
+#include <fstream>
 using namespace std;
 class FSM
 {
@@ -20,6 +21,7 @@ private:
 public:
 	FSM(string str[], int strLen, string nonterminator, string Terminators);
 	void show();//展示ACTION和GOTO
+	void outPutToFile(string path);//输出到文本
 	void buildFSM();//构建FSM
 	void buildACTIONandGOTO();//构建ACTION和GOTO
 };
